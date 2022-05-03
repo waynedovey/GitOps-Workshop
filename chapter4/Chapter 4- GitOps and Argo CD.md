@@ -1,4 +1,4 @@
-# Chapter Five: GitOps and Argo CD
+# Chapter 4: GitOps and Argo CD
 The previous chapters discussed the basics of modern application development with Kubernetes. This chapter shows you how to integrate a project into Kubernetes native pipelines to do your CI/CD and automatically deploy your application out of a pipeline run. We discuss the risks and benefits of using GitOps and [Argo CD][1] in your project and give you some hints on how to use it with Red Hat OpenShift.
 
 ## Introduction to GitOps
