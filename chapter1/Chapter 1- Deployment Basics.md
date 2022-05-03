@@ -605,6 +605,6 @@ The next chapter is about Helm Charts and Kubernetes Operators for application p
 [4]:	https://kustomize.io/
 [5]:	https://github.com/kubernetes-sigs/kustomize/tree/master/examples
 
-[image-1]:	file:///Users/wpernath/Devel/ocpdev-book/chapter2/developer-catalog-template.png
-[image-2]:	file:///Users/wpernath/Devel/ocpdev-book/chapter2/template-instantiation.png
-[image-3]:	file:///Users/wpernath/Devel/ocpdev-book/chapter2/topology-view-template.png
+[image-1]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter1/developer-catalog-template.png
+[image-2]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter1/template-instantiation.png
+[image-3]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter1/topology-view-template.png
