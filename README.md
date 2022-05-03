@@ -7,7 +7,10 @@ This is a repository with all the sources for the Book "Getting GitOps. A Practi
 
 # Chapters
 
-|Chapter 1 | Description of Kubernetes; Basic deployment | 
-|Chapter 2 | Helm Charts and Kubernetes Operators |
-|Chapter 3 | Tekton Pipelines |
-|Chapter 4 | GitOps and ArgoCD |
+Chapter 1: Description of Kubernetes; Basic deployment 
+
+Chapter 2: Helm Charts and Kubernetes Operators
+
+Chapter 3: Tekton Pipelines
+
+Chapter 4: GitOps and ArgoCD
