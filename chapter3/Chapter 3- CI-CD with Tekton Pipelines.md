@@ -1,6 +1,4 @@
-# Chapter 4: CI/CD with Tekton Pipelines
-Chapters 2 and 3 of this book discussed the basics of application packaging with Kustomize, Helm Charts, and Operators. They also discussed how to handle images and all the metadata required for working with Kubernetes.
-
+# Chapter 3: CI/CD with Tekton Pipelines
 This chapter discusses how to integrate complex tasks, such as building and deploying applications, into Kubernetes using [Tekton][1]. Continuous integration and continuous development (CI/CD) are represented in Tekton as *pipelines* that combine all the steps you need to accomplish what you want. And Tekton makes it easy to write a general pipeline that you can adapt to many related tasks.
 
 ## Tekton and OpenShift Pipelines
@@ -474,11 +472,11 @@ The next chapter of this book discusses Tekton security, as well as GitOps and A
 [15]:	https://raw.githubusercontent.com/wpernath/book-example/main/tekton/tasks/maven-task.yaml
 [16]:	https://tekton.dev/docs/pipelines/auth/
 
-[image-1]:	file:///Users/wpernath/Devel/ocpdev-book/chapter4/1-install-pipelines-operator.png
-[image-2]:	file:///Users/wpernath/Devel/ocpdev-book/chapter4/2-installed-pipelines-operator.png
-[image-3]:	file:///Users/wpernath/Devel/ocpdev-book/chapter4/3-quarkus-app-props.png
-[image-4]:	file:///Users/wpernath/Devel/ocpdev-book/chapter4/4-all-cluster-tasks.png
-[image-5]:	file:///Users/wpernath/Devel/ocpdev-book/chapter4/5-pipeline-builder.png
-[image-6]:	file:///Users/wpernath/Devel/ocpdev-book/chapter4/6-linking-workspaces.png
-[image-7]:	file:///Users/wpernath/Devel/ocpdev-book/chapter4/7-pipeline-run.png
-[image-8]:	file:///Users/wpernath/Devel/ocpdev-book/chapter4/8-simplified-maven-task.png
+[image-1]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter4/1-install-pipelines-operator.png
+[image-2]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter4/2-installed-pipelines-operator.png
+[image-3]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter4/3-quarkus-app-props.png
+[image-4]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter4/4-all-cluster-tasks.png
+[image-5]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter4/5-pipeline-builder.png
+[image-6]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter4/6-linking-workspaces.png
+[image-7]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter4/7-pipeline-run.png
+[image-8]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter4/8-simplified-maven-task.png
