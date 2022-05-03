@@ -769,8 +769,8 @@ The next chapter of this book will talk about Tekton pipelines as a form of inte
 [26]:	https://sdk.operatorframework.io/docs/installation/ "Install Operator-SDK"
 [27]:	https://sdk.operatorframework.io/docs/building-operators/helm/tutorial/ "SDK tutorial"
 
-[image-1]:	file:///Users/wpernath/Devel/ocpdev-book/chapter3/1-person-service-on-quayio.png
-[image-2]:	file:///Users/wpernath/Devel/ocpdev-book/chapter3/2-event-log-openshift.png
-[image-3]:	file:///Users/wpernath/Devel/ocpdev-book/chapter3/3-helm-chart-release-ocp.png
-[image-4]:	file:///Users/wpernath/Devel/ocpdev-book/chapter3/4-building-operator-bundle.png
-[image-5]:	file:///Users/wpernath/Devel/ocpdev-book/chapter3/5-installed-operators.png
+[image-1]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter2/1-person-service-on-quayio.png
+[image-2]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter2/2-event-log-openshift.png
+[image-3]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter2/3-helm-chart-release-ocp.png
+[image-4]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter2/4-building-operator-bundle.png
+[image-5]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter2/5-installed-operators.png
