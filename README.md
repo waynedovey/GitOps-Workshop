@@ -9,11 +9,10 @@ This is a repository with all the sources for the Book "Getting GitOps. A Practi
 
 |Chapter|Description|Status|
 |--------|--------|--------|
-|Chapter 1 |  Quarkus MicroService |FINAL REVIEW|
-|Chapter 2 | Description of Kubernetes; Basic deployment | FINAL REVIEW|
-|Chapter 3 | Helm Charts and Kubernetes Operators |FINAL REVIEW|
-|Chapter 4 | Tekton Pipelines | FINAL REVIEW|
-|Chapter 5 | GitOps and ArgoCD | FINAL REVIEW|
+|Chapter 1 | Description of Kubernetes; Basic deployment | 
+|Chapter 2 | Helm Charts and Kubernetes Operators |
+|Chapter 3 | Tekton Pipelines |
+|Chapter 4 | GitOps and ArgoCD |
 
 [1]:	https://developers.redhat.com/e-books/getting-gitops-practical-platform-openshift-argo-cd-and-tekton
 [2]:	https://github.com/wpernath/book-example
