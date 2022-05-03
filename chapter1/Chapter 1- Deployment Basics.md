@@ -143,7 +143,7 @@ To read the name of the image out of the `Deployment` file, you could enter:
 
 ```bash
 $  yq e '.spec.template.spec.containers[0].image' \
-raw-kubernetes/deployment.yaml \
+artifacts/raw-kubernetes/deployment.yaml \
 image-registry.openshift-image-registry.svc:5000/book-dev/person-service@
 ```
 
@@ -151,7 +151,7 @@ To change the name of the image, you could enter:
 
 ```bash
 $ yq e -i '.spec.template.spec.containers[0].image = "image-registry.openshift-image-registry.svc:5000/book-dev/person-service:latest"' \
-raw-kubernetes/deployment.yaml
+artifacts/raw-kubernetes/deployment.yaml
 ```
 
 This command updates the `Deployment` in place, changing the name of the image to `person-service:latest`.
