@@ -112,6 +112,16 @@ $ oc apply -f artifacts/raw-kubernetes/deployment.yaml
 $ oc apply -f artifacts/raw-kubernetes/route.yaml
 ```
 
+we have to create a PostgreSQL database server as well. Just execute the following command.
+
+```bash
+$ oc new-app postgresql-persistent \
+	-p POSTGRESQL_USER=wanja \
+	-p POSTGRESQL_PASSWORD=wanja \
+	-p POSTGRESQL_DATABASE=wanjadb \
+	-p DATABASE_SERVICE_NAME=wanjaserver
+```
+
 The `oc policy` command is necessary to grant the `book-test` namespace access to the image in the namespace `book-dev`. Without this command, you’d get an error message in OpenShift saying that the image was not found, unless you are entering commands as an admin user.
 
 This section has described one way of getting required files. Of course, if you have more elements to your application, you need to export the files defining those elements as well. If you have defined objects of type `PersistentVolumeClaim`, `ConfigMap`, or `Secret`, you need to export them and strip them down as well.
