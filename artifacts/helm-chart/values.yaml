@@ -1,0 +1,9 @@
+deployment:
+    image: quay.io/wpernath/person-service
+    version: v1.0.0-test
+    replicas: 4
+    includeHealthChecks: false
+
+config:
+    greeting: 'Hello dear new hires from our partners.'
+
