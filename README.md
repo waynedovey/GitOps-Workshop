@@ -7,7 +7,7 @@ This is a repository with all the sources for the Book "Getting GitOps. A Practi
 
 # Status of the chapters
 
-|Chapter|Description|Status|
+|Chapter|Description|
 |--------|--------|--------|
 |Chapter 1 | Description of Kubernetes; Basic deployment | 
 |Chapter 2 | Helm Charts and Kubernetes Operators |
