@@ -1,4 +1,4 @@
-# Chapter 3: Packaging with Helm and Kubernetes Operators
+# Chapter 2: Packaging with Helm and Kubernetes Operators
 In this chapter, you'll learn more about working with container images. In particular, I will help you understand the concepts of Helm charts and Kubernetes Operators.
 
 ## Modern distributions
