@@ -21,7 +21,7 @@ The following commands create a new project named `book-dev` in OpenShift, follo
 
 ```bash
 $ oc new-project book-dev
-$ oc new-app java:openjdk-11-ubi8~https://github.com/wpernath/book-example.git --context-dir=person-service --name=person-service --build-env MAVEN_MIRROR_URL=http://nexus.ci:8081/repository/maven-public/
+$ oc new-app java:openjdk-11-ubi8~https://github.com/wpernath/book-example.git --context-dir=person-service --name=person-service 
 $ oc expose service/person-service
 route.route.openshift.io/person-service exposed
 ```
@@ -107,9 +107,9 @@ Do the same with `Route` and `Service`. That’s all for the present. You’re n
 ```bash
 $ oc new-project book-test
 $ oc policy add-role-to-user system:image-puller system:serviceaccount:book-test:default --namespace=book-dev
-$ oc apply -f raw-kubernetes/service.yaml
-$ oc apply -f raw-kubernetes/deployment.yaml
-$ oc apply -f raw-kubernetes/route.yaml
+$ oc apply -f artifacts/raw-kubernetes/service.yaml
+$ oc apply -f artifacts/raw-kubernetes/deployment.yaml
+$ oc apply -f artifacts/raw-kubernetes/route.yaml
 ```
 
 The `oc policy` command is necessary to grant the `book-test` namespace access to the image in the namespace `book-dev`. Without this command, you’d get an error message in OpenShift saying that the image was not found, unless you are entering commands as an admin user.
@@ -226,7 +226,7 @@ Now for the biggest convenience offered by OpenShift Templates: Once you have in
 ```bash
 $ oc new-project book-template
 $ oc policy add-role-to-user system:image-puller system:serviceaccount:book-template:default --namespace=book-dev
-$ oc apply -f ocp-template/service-template.yaml
+$ oc apply -f artifacts/ocp-template/service-template.yaml
 template.template.openshift.io/service-template created
 ```
 
@@ -289,8 +289,8 @@ Kustomize was originally created by Google and is now a subproject of Kubernetes
 Let’s have a look at the files in a Kustomize directory:
 
 ```bash
-$ tree kustomize
-kustomize
+$ tree artifacts/kustomize
+artifacts/kustomize
 ├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
@@ -332,7 +332,7 @@ The following commands process the files and deploy our application on OpenShift
 
 ```bash
 $ oc new-project book-kustomize
-$ oc apply -k kustomize/overlays/dev
+$ oc apply -k artifacts/kustomize/overlays/dev
 service/dev-person-service created
 deployment.apps/dev-person-service created
 route.route.openshift.io/dev-person-service created
@@ -341,7 +341,7 @@ route.route.openshift.io/dev-person-service created
 If you also install the Kustomize command-line tool (for example, with `brew install kustomize` on macOS), you’re able to debug the output:
 
 ```bash
-$ kustomize build kustomize/overlays/dev
+$ kustomize build artifacts/kustomize/overlays/dev
 apiVersion: v1
 kind: Service
 metadata:
@@ -394,13 +394,13 @@ Kustomize fields such as `commonLabels` or `commonAnnotations` can specify label
 The following command merges the files together for the staging overlay.
 
 ```bash
-$ kustomize build kustomize/overlays/stage
+$ kustomize build artifacts/kustomize/overlays/stage
 ```
 
 The following output shows that all filenames have `staging-` as a prefix. Additionally, the configuration has a new `commonLabel` (the `variant: staging` line) and annotation (`note: we are on staging now`).
 
 ```bash
-$ kustomize build kustomize/overlays/stage
+$ kustomize build artifacts/kustomize/overlays/stage
 [...]
 
 apiVersion: apps/v1
@@ -467,7 +467,7 @@ spec:
 The global `org` label is still specified. You can deploy the stage to OpenShift with the command:
 
 ```bash
-$ oc apply -k kustomize/overlays/stage
+$ oc apply -k artifacts/kustomize/overlays/stage
 ```
 
 
@@ -582,7 +582,7 @@ Starting with Kubernetes release 1.21 (which is reflected in OpenShift 4.8.x), `
 Before Kubernetes 1.21 (OpenShift 4.7.x and before) `oc apply -k` does not contain recent Kustomize features. So if you want to use those features, you need to use the `kustomize` command-line tool and pipe the output to `oc apply -f`.
 
 ```bash
-$ kustomize build kustomize-ext/overlays/stage | oc apply -f -
+$ kustomize build artifacts/kustomize-ext/overlays/stage | oc apply -f -
 ```
 
 For more information and even more sophisticated examples, have a look at the [Kustomize home page][4] as well as the examples in the official [GitHub.com repository][5].
@@ -605,6 +605,6 @@ The next chapter is about Helm Charts and Kubernetes Operators for application p
 [4]:	https://kustomize.io/
 [5]:	https://github.com/kubernetes-sigs/kustomize/tree/master/examples
 
-[image-1]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter1/developer-catalog-template.png
-[image-2]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter1/template-instantiation.png
-[image-3]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter1/topology-view-template.png
+[image-1]:	developer-catalog-template.png
+[image-2]:	template-instantiation.png
+[image-3]:	topology-view-template.png
