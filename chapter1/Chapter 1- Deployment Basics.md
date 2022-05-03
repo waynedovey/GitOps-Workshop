@@ -112,7 +112,7 @@ $ oc apply -f artifacts/raw-kubernetes/deployment.yaml
 $ oc apply -f artifacts/raw-kubernetes/route.yaml
 ```
 
-we have to create a PostgreSQL database server as well. Just execute the following command.
+We have to create a PostgreSQL database server as well. Just execute the following command.
 
 ```bash
 $ oc new-app postgresql-persistent \
@@ -236,6 +236,16 @@ $ oc new-project book-template
 $ oc policy add-role-to-user system:image-puller system:serviceaccount:book-template:default --namespace=book-dev
 $ oc apply -f artifacts/ocp-template/service-template.yaml
 template.template.openshift.io/service-template created
+```
+
+We have to create a PostgreSQL database server as well. Just execute the following command.
+
+```bash
+$ oc new-app postgresql-persistent \
+	-p POSTGRESQL_USER=wanja \
+	-p POSTGRESQL_PASSWORD=wanja \
+	-p POSTGRESQL_DATABASE=wanjadb \
+	-p DATABASE_SERVICE_NAME=wanjaserver
 ```
 
 Just open the OpenShift web console now, choose the project, click **+Add**, and choose the **Developer Catalog**. You should be able to find a template called `service-template` (Image 1). This is the one we’ve created.
