@@ -350,6 +350,7 @@ The following commands process the files and deploy our application on OpenShift
 
 ```bash
 $ oc new-project book-kustomize
+$ oc policy add-role-to-user system:image-puller system:serviceaccount:book-kustomize:default --namespace=book-dev
 $ oc apply -k artifacts/kustomize/overlays/dev
 service/dev-person-service created
 deployment.apps/dev-person-service created
