@@ -59,6 +59,7 @@ With Docker or Podman in place, along with a repository on Quay.io or another se
 
 ```bash
 $ docker login quay.io -u <username> -p <password>
+$ cd artifacts/person-service
 $ mvn clean package -DskipTests
 $ docker build -f src/main/docker/Dockerfile.jvm -t quay.io/wpernath/person-service .
 ```
@@ -129,8 +130,7 @@ Then simply execute the following commands to install your application:
 ```bash
 $ oc login <your openshift cluster>
 $ oc new-project book-test
-$ oc apply -k artifacts/
-kustomize-ext/overlays/dev
+$ oc apply -k artifacts/kustomize-ext/overlays/dev
 configmap/dev-app-config-t9m475fk56 created
 service/dev-person-service created
 deployment.apps/dev-person-service created
