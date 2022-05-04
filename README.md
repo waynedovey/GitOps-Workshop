@@ -14,3 +14,9 @@ Chapter 2: Helm Charts and Kubernetes Operators
 Chapter 3: Tekton Pipelines
 
 Chapter 4: GitOps and ArgoCD
+
+# Getting Started
+
+SSH access to a Linux Machine or an unrestricted MacBook (Brew installed)
+Quay.io Account (RHN Account)
+
