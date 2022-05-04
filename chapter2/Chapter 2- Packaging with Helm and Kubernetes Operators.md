@@ -88,7 +88,7 @@ Because Docker or Podman are only incidental to this chapter, I will move on to 
 #### Testing the image
 Now that you have your image stored in Quay.io, test it to see whether everything has successfully worked out. For this, you are going to use our Kustomize example from the previous chapter.
 
-First of all, make sure that the `kustomize-ext/overlays/dev/kustomization.yaml` file looks like this:
+First of all, make sure that the `artifacts/kustomize-ext/overlays/dev/kustomization.yaml` file looks like this:
 
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -210,7 +210,7 @@ maintainers:
 You are now done with your first Helm chart. Of course, right now it does nothing special. You have to fill the chart with some content. So now copy the following files from the previous chapter into the `helm-chart/templates` folder:
 
 ```bash
-$ cp kustomize-ext/base/*.yaml helm-chart/templates/
+$ cp artifacts/kustomize-ext/base/*.yaml helm-chart/templates/
 ```
 
 The directory structure of your Helm chart now looks like this:
