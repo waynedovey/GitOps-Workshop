@@ -465,7 +465,7 @@ An Operator creates, watches, and maintains CRDs. This basically means that it p
 
 If you need to have full control over everything, you have to create the Operator with Go or (unofficially) with Java. Otherwise, you can make use of an Ansible-based or Helm-based Operator. The Operator SDK and the base packages in Ansible and Helm take care of the Kubernetes API calls. So you don't have to learn Go now in order to build your first Operator.
 
-### Creating a Helm-based Operator
+### Creating a Helm-based Operator (Skipped)
 To create an Operator, you need to [install the Operator-SDK][26]. On macOS, you can simply execute:
 
 ```bash
