@@ -213,6 +213,7 @@ You are now done with your first Helm chart. Of course, right now it does nothin
 ```bash
 $ cd artifacts
 $ cp kustomize-ext/base/*.yaml helm-chart/templates/
+$ rm -fr helm-chart/templates/kustomization.yaml
 ```
 
 The directory structure of your Helm chart now looks like this:
