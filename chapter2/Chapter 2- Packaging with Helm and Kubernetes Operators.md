@@ -129,7 +129,8 @@ Then simply execute the following commands to install your application:
 ```bash
 $ oc login <your openshift cluster>
 $ oc new-project book-test
-$ oc apply -k kustomize-ext/overlays/dev
+$ oc apply -k artifacts/
+kustomize-ext/overlays/dev
 configmap/dev-app-config-t9m475fk56 created
 service/dev-person-service created
 deployment.apps/dev-person-service created
