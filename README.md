@@ -18,5 +18,8 @@ Chapter 4: GitOps and ArgoCD
 # Getting Started
 
 SSH access to a Linux Machine or an unrestricted MacBook (Brew installed)
+
 Quay.io Account (RHN Account)
+
+Console and CLI access to an OpenShift Cluster 
 
