@@ -356,6 +356,16 @@ deployment.apps/dev-person-service created
 route.route.openshift.io/dev-person-service created
 ```
 
+We have to create a PostgreSQL database server as well. Just execute the following command.
+
+```bash
+$ oc new-app postgresql-persistent \
+	-p POSTGRESQL_USER=wanja \
+	-p POSTGRESQL_PASSWORD=wanja \
+	-p POSTGRESQL_DATABASE=wanjadb \
+	-p DATABASE_SERVICE_NAME=wanjaserver
+```
+
 If you also install the Kustomize command-line tool (for example, with `brew install kustomize` on macOS), you’re able to debug the output:
 
 ```bash
