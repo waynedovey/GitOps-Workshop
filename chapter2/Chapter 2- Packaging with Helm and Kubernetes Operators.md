@@ -184,6 +184,7 @@ $ helm create foo
 But I think it's better not to create a chart from a template, but to start from scratch. To do so, enter the following commands to create a basic file system structure for your new Helm chart:
 
 ```bash
+$ mv helm-chart helm-chart.bk 
 $ mkdir helm-chart
 $ mkdir helm-chart/templates
 $ touch helm-chart/Chart.yaml
@@ -210,7 +211,8 @@ maintainers:
 You are now done with your first Helm chart. Of course, right now it does nothing special. You have to fill the chart with some content. So now copy the following files from the previous chapter into the `helm-chart/templates` folder:
 
 ```bash
-$ cp artifacts/kustomize-ext/base/*.yaml helm-chart/templates/
+$ cd artifacts
+$ cp kustomize-ext/base/*.yaml helm-chart/templates/
 ```
 
 The directory structure of your Helm chart now looks like this:
