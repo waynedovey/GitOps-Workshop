@@ -652,7 +652,7 @@ Waves can be defined by annotating your Kubernetes resources with the following 
 ```yaml
 metadata:
   annotations:
-	argocd.argoproj.io/sync-wave: <+/- number>
+    argocd.argoproj.io/sync-wave: <+/- number>
 ```
 
 Argo CD sorts all resources first by the phase, then by the wave, and finally by type and name. If you know that some resources need to be applied before others, simply group them via the annotation. By default, Argo CD uses wave zero for any resources and hooks.
