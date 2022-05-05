@@ -480,10 +480,9 @@ spec:
     - name: extract-digest
       image: quay.io/wpernath/kustomize-ubi:latest
       script: |
-		# extract DIGEST
+        # extract DIGEST
         DIGEST=$(cat $(workspaces.source.path)/$(params.image-digest-path)/jib-image.digest)
-
-		# Store DIGEST into result
+        # Store DIGEST into result
         echo -n $DIGEST > $(results.DIGEST.path)
 ```
 
