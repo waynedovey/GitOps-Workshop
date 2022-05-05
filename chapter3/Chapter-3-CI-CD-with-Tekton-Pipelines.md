@@ -18,15 +18,6 @@ Internally, Tekton creates a TaskRun object for each task it finds in a Pipeline
 
 To summarize: A pipeline contains a list of tasks, each of which contain a list of steps. One of the benefits of Tekton is that tasks and pipelines can be shared with other people, because a pipeline just specifies what to do in a given order. So if most of your projects have a similar pipeline, share and reuse it.
 
-### Installing the tkn command-line tool
-Tekton comes with a command-line tool called `tkn`, which you can easily install on macOS by issuing:
-
-```bash
-$ brew install tektoncd-cli
-```
-
-Please check the official homepage of Tekton to see how to install the tool on other operating systems.
-
 ### Installing OpenShift Pipelines on Red Hat OpenShift
 
 The process in this chapter requires version 1.4.1 or higher of the OpenShift Pipelines Operator. To install that version, you also need a recent 4.7 OpenShift cluster, which you could install for example via [CodeReady Containers][4]. Without these tools, you won’t have access to workspaces (which you need to define).
@@ -59,7 +50,8 @@ Of course, you could also use other tools to create your container image inside 
 
 **NOTE**: Make sure that your Quarkus application is using the required Quarkus extension called `container-image-jib`. If your `pom.xml` file does not include the `quarkus-container-image-jib` dependency, add it by executing:
 
-```bash
+```bash 
+$ cd ~/GitOps-Workshop/artifacts/person-service/
 $ mvn quarkus:add-extension -Dextensions="container-image-jib"
 [INFO] Scanning for projects...
 [INFO]
