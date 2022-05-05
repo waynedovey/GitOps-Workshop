@@ -25,28 +25,7 @@ However, Docker requires a daemon to run on the system hosting the tool, and the
 
 Podman was then invented and became a popular replacement for Docker. Podman performs basically the same tasks as Docker and has a compatible interface where almost all the commands and arguments are the same. Podman is very lightweight, and—crucially—can be run as an ordinary user account without a daemon.
 
-However, Podman as a full Docker Desktop replacement currently runs only on GNU/Linux. If you are working on a Windows or macOS system, you have to [set up a remote Linux system to make full use of Podman][6]. You might also have a look at [a newer version of CodeReady Containers (version 2.x onwards)][7], which aims to become a full Docker Desktop replacement for Windows and macOS using Podman underneath. 
-
-[Podman 4.x onwards][8] massively simplifies the way to setup the required remote Linux system with a new API. The following command initializes a new host:
-
-```bash
-$ podman machine init
-```
-
-And the following command starts the local VM:
-```bash
-$ podman machine start
-```
-
-If you previously have used Podman on your Windows or MacOS system, have a look at the system connection list. It should return something like this. If there is still your old system connection available, then either delete it or make it non-default. 
-
-```bash
-$ podman system connection list
-Name                         URI                                                         Identity                                     Default
-podman-machine-default       ssh://core@localhost:58845/run/user/501/podman/podman.sock  /Users/wpernath/.ssh/podman-machine-default  true
-podman-machine-default-root  ssh://root@localhost:58845/run/podman/podman.sock           /Users/wpernath/.ssh/podman-machine-default  false
-
-```
+However, Podman as a full Docker Desktop replacement currently runs only on GNU/Linux. 
 
 Podman internally uses [Buildah][9] to build container images. According to the official [GitHub page][10], Buildah is the main tool for building images that conform to the [Open Container Initiative (OCI)][11] standard. The documentation states, "Buildah's commands replicate all the commands that are found in a Dockerfile. This allows building images with and without a Dockerfile, without requiring any root privileges."
 
