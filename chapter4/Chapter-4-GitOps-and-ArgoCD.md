@@ -500,7 +500,7 @@ Map these parameters to the `git-update-deployment` task, as shown in Image 9.
 ![Image 9: Parameter mapping][image-9]
 
 ### Testing the Pipeline
-You can't currently run the pipeline from the user interface because you can't use a different ServiceAccount that lacks the two secrets you need to provide. Therefore, start a pipeline via the CLI. For your convenience, I have created a Bash script called `gitops/tekton/pipeline.sh` that can be used to initialize your namespace and start the pipeline.
+You can't currently run the pipeline from the user interface because you can't use a different ServiceAccount that lacks the two secrets you need to provide. Therefore, start a pipeline via the CLI. For your convenience, I have created a Bash script called `artifacts/tekton/pipeline.sh` that can be used to initialize your namespace and start the pipeline.
 
 To create the necessary namespaces and Argo CD Applications, enter the following command, passing your username and password:
 
