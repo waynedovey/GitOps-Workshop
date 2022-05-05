@@ -55,12 +55,10 @@ The first command logs into your Quay.io account. The second command builds the 
 $ alias docker=podman
 ```
 
-Setting up Podman on any non-Linux system is a little bit tricky, as mentioned. You need access to a Linux system, running either directly on one of your systems or in a virtual machine. The Linux system basically works as the execution unit for the Podman client. The [documentation mentioned earlier][15] shows you how that works.
-
 When your image is ready, you need to push the image to your repository:
 
 ```bash
-$ docker push quay.io/wpernath/person-service -a
+$ docker push quay.io/$username/person-service
 ```
 
 This will push all (`-a`) locally stored images to the external repository, including all tags (Figure 1). Now you can use the image in your OpenShift environment .
@@ -115,6 +113,7 @@ Then simply execute the following commands to install your application:
 ```bash
 $ oc login <your openshift cluster>
 $ oc new-project book-test
+$ cd ../..
 $ oc apply -k artifacts/kustomize-ext/overlays/dev
 configmap/dev-app-config-t9m475fk56 created
 service/dev-person-service created
@@ -130,18 +129,15 @@ If you're on any other operating system than Linux, Podman is a little bit compl
 This is unfortunate, because Podman is much more lightweight than Docker. And Podman does not require root access. So if you have some time—or are already developing your applications on Linux—try to set up Podman. If not, continue to use Docker.
 
 #### Working with Skopeo
-[Skopeo][16] is another command line tool that helps you work with container images and different image registries without the heavyweight Docker daemon. On macOS, you can easily install Skopeo via `brew`:
-
-```bash
-$ brew install skopeo
-```
+[Skopeo][16] is another command line tool that helps you work with container images and different image registries without the heavyweight Docker daemon. 
 
 You can use `skopeo` to tag an image in a remote registry:
 
 ```bash
+$ export username=replaceme
 $ skopeo copy \
-   docker://quay.io/wpernath/person-service:latest \
-   docker://quay.io/wpernath/person-service:v1.0.1-test
+   docker://quay.io/$username/person-service:latest \
+   docker://quay.io/$username/person-service:v1.0.1-test
 ```
 
 But you can also use Skopeo to mirror a complete repository by copying all images in one go.
@@ -154,12 +150,6 @@ Think about Helm charts as a package manager for Kubernetes applications, like R
 
 Let's first have a look at how to create a Helm chart to install your application on OpenShift.
 
-First of all, you need to download and [install the Helm CLI][19]. On macOS you can easily do this via:
-
-```bash
-$ brew install helm
-```
-
 Helm has its own directory structure for storing necessary files. Helm allows you to create a basic template structure with everything you need (and even more). The following command creates a Helm chart structure for a new chart called `foo`:
 
 ```bash
@@ -169,6 +159,7 @@ $ helm create foo
 But I think it's better not to create a chart from a template, but to start from scratch. To do so, enter the following commands to create a basic file system structure for your new Helm chart:
 
 ```bash
+$ cd artifacts/
 $ mv helm-chart helm-chart.bk 
 $ mkdir helm-chart
 $ mkdir helm-chart/templates
@@ -196,7 +187,6 @@ maintainers:
 You are now done with your first Helm chart. Of course, right now it does nothing special. You have to fill the chart with some content. So now copy the following files from the previous chapter into the `helm-chart/templates` folder:
 
 ```bash
-$ cd artifacts
 $ cp kustomize-ext/base/*.yaml helm-chart/templates/
 $ rm -fr helm-chart/templates/kustomization.yaml
 ```
