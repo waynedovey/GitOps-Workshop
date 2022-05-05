@@ -358,8 +358,8 @@ Copy the secrets to your own ServiceAccount:
 ```yaml
 apiVersion: v1
 kind: ServiceAccount
-	metadata:
-  		name: pipeline-bot
+    metadata:
+  	name: pipeline-bot
 secrets:
 - name: git-user-pass
 ```
