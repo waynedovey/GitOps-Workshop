@@ -7,13 +7,13 @@ This is a repository with all the sources for the Book "Getting GitOps. A Practi
 
 # Chapters
 
-Chapter 1: Description of Kubernetes; Basic deployment 
+[Chapter 1: Description of Kubernetes; Basic deployment][1]
 
-Chapter 2: Helm Charts and Kubernetes Operators
+[Chapter 2: Helm Charts and Kubernetes Operators][2]
 
-Chapter 3: Tekton Pipelines
+[Chapter 3: Tekton Pipelines][3]
 
-Chapter 4: GitOps and ArgoCD
+[Chapter 4: GitOps and ArgoCD][4]
 
 # Getting Started
 
@@ -23,3 +23,7 @@ Quay.io Account (RHN Account)
 
 Console and CLI access to an OpenShift Cluster 
 
+[1]: Chapter-1-Deployment-Basics.md
+[2]: Chapter-2-Packaging-with-Helm-and-Kubernetes-Operators.md
+[3]: Chapter-3-CI-CD-with-Tekton-Pipelines.md
+[4]: Chapter-4-GitOps-and-ArgoCD.md
