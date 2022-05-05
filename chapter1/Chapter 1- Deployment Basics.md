@@ -132,33 +132,8 @@ This simple example has shown how you can export the manifest files of your app 
 
 For example, it does not make sense to use the latest image from the `book-dev` namespace in the `book-test` namespace. You’d always have the same version of your application in the development and test environments. To allow the environments to evolve separately, you have to change the image in the `Deployment` on every stage you’re using. You could obviously do this manually. But let’s find some ways to automate it.
 
-## YAML Parser (yq)
-To maintain different versions of configuration files, the first tool that most likely pops into your mind is the lightweight command-line YAML parser, [`yq`][1].
-
-There are many ports available for most operating systems. On macOS, you can  install it via [Homebrew][2]:
-
-```bash
-$ brew install yq
-```
-
-To read the name of the image out of the `Deployment` file, you could enter:
-
-```bash
-$  yq e '.spec.template.spec.containers[0].image' artifacts/raw-kubernetes/deployment.yaml
-image-registry.openshift-image-registry.svc:5000/book-dev/person-service@
-```
-
-To change the name of the image, you could enter:
-
-```bash
-$ yq e -i '.spec.template.spec.containers[0].image = "image-registry.openshift-image-registry.svc:5000/book-dev/person-service:latest"' artifacts/raw-kubernetes/deployment.yaml
-```
-
-This command updates the `Deployment` in place, changing the name of the image to `person-service:latest`.
-
 The following process efficiently creates a staging release:
 - Tag the currently used image in `book-dev` to something more meaningful, like `person-service:v1.0.0-test`.
-- Use `yq` to change the image name in the deployment.
 - Create a new namespace.
 - Apply the necessary `Deployment`, `Service`, and `Route` configuration files as shown earlier.
 
@@ -167,7 +142,6 @@ This process could easily be scripted in a shell script, for example:
 ```bash
 #!/bin/bash
 oc tag book-dev/person-service@sha... book-dev/person-service:stage-v1.0.0
-yq e -i ...
 oc new-project ...
 oc apply -f deployment.yaml
 ```
