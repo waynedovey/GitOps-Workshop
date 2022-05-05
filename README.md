@@ -23,7 +23,7 @@ Quay.io Account (RHN Account)
 
 Console and CLI access to an OpenShift Cluster 
 
-[1]: Chapter-1-Deployment-Basics.md
-[2]: Chapter-2-Packaging-with-Helm-and-Kubernetes-Operators.md
-[3]: Chapter-3-CI-CD-with-Tekton-Pipelines.md
-[4]: Chapter-4-GitOps-and-ArgoCD.md
+[1]: chapter1/Chapter-1-Deployment-Basics.md
+[2]: chapter2/Chapter-2-Packaging-with-Helm-and-Kubernetes-Operators.md
+[3]: chapter3/Chapter-3-CI-CD-with-Tekton-Pipelines.md
+[4]: chapter4/Chapter-4-GitOps-and-ArgoCD.md
