@@ -106,7 +106,8 @@ Do the same with `Route` and `Service`. That’s all for the present. You’re n
 
 ```bash
 $ oc new-project book-test
-$ oc policy add-role-to-user system:image-puller system:serviceaccount:book-test:default --namespace=book-dev
+$ oc policy add-role-to-user system:image-puller system:serviceaccount:book-test:default \
+  --namespace=book-dev
 $ git clone https://github.com/waynedovey/GitOps-Workshop.git
 $ cd GitOps-Workshop
 $ oc apply -f artifacts/raw-kubernetes/service.yaml
@@ -326,7 +327,8 @@ The following commands process the files and deploy our application on OpenShift
 
 ```bash
 $ oc new-project book-kustomize
-$ oc policy add-role-to-user system:image-puller system:serviceaccount:book-kustomize:default --namespace=book-dev
+$ oc policy add-role-to-user system:image-puller system:serviceaccount:book-kustomize:default \
+  --namespace=book-dev
 $ oc apply -k artifacts/kustomize/overlays/dev
 service/dev-person-service created
 deployment.apps/dev-person-service created
