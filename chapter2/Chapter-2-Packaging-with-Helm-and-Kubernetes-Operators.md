@@ -36,11 +36,17 @@ But because everything you can do with Buildah is part of Podman anyway, there i
 #### Your first build
 With Docker or Podman in place, along with a repository on Quay.io or another service, check out the [demo repository for this article][13]. In `person-service/src/main/docker` you can find the file that configures builds for your application. The file is called simply `Dockerfile`. To build the demo application, based on the Quarkus Java framework, change into the top-level directory containing the demo files. Then enter the following commands, plugging in your Quay.io username and password:
 
+#### Create your New Docker:
+
+Example https://quay.io/repository/wdovey/person-service
+
+
 ```bash
+$ export username=replaceme
 $ docker login quay.io -u <username> -p <password>
 $ cd artifacts/person-service
 $ mvn clean package -DskipTests
-$ docker build -f src/main/docker/Dockerfile.jvm -t quay.io/wpernath/person-service .
+$ docker build -f src/main/docker/Dockerfile.jvm -t quay.io/$username/person-service .
 ```
 
 The first command logs into your Quay.io account. The second command builds the application with [Maven][14]. The third, finally, creates a Docker image out of the app. If you choose to use Podman, simply substitute `podman` for `docker` in your Docker commands, because Podman supports the same arguments. You could also make scripts that invoke Docker run with Podman instead, by aliasing the string `docker` to `podman`:
