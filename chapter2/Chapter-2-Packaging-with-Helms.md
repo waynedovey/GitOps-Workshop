@@ -1,5 +1,5 @@
-# Chapter 2: Packaging with Helm and Kubernetes Operators
-In this chapter, you'll learn more about working with container images. In particular, I will help you understand the concepts of Helm charts and Kubernetes Operators.
+# Chapter 2: Packaging with Helm
+In this chapter, you'll learn more about working with container images. In particular, I will help you understand the concepts of Helm charts.
 
 ## Modern distributions
 As already mentioned in Chapter 2, the most difficult task when turning code into a useful product is creating a distributable package from the application. It is no longer just a matter of zipping all files together and putting them somewhere. We have to take care of several meta-artifacts. Some of these might not belong to the developer, but to the owner of the application.
