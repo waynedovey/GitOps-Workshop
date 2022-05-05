@@ -107,6 +107,8 @@ Do the same with `Route` and `Service`. That’s all for the present. You’re n
 ```bash
 $ oc new-project book-test
 $ oc policy add-role-to-user system:image-puller system:serviceaccount:book-test:default --namespace=book-dev
+$ git clone https://github.com/waynedovey/GitOps-Workshop.git
+$ cd GitOps-Workshop
 $ oc apply -f artifacts/raw-kubernetes/service.yaml
 $ oc apply -f artifacts/raw-kubernetes/deployment.yaml
 $ oc apply -f artifacts/raw-kubernetes/route.yaml
