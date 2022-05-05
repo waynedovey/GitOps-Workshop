@@ -34,10 +34,10 @@ In order to let the example start successfully, we have to create a PostgreSQL d
 
 ```bash
 $ oc new-app postgresql-persistent \
-	-p POSTGRESQL_USER=wanja \
-	-p POSTGRESQL_PASSWORD=wanja \
-	-p POSTGRESQL_DATABASE=wanjadb \
-	-p DATABASE_SERVICE_NAME=wanjaserver
+     -p POSTGRESQL_USER=wanja \
+     -p POSTGRESQL_PASSWORD=wanja \
+     -p POSTGRESQL_DATABASE=wanjadb \
+     -p DATABASE_SERVICE_NAME=wanjaserver
 ```
 
 
