@@ -3,6 +3,12 @@ This discusses how apps are deployed in Kubernetes and OpenShift, what manifest 
 
 The chapter also discusses OpenShift Templates and Kustomize, tools that help automate those necessary file changes.
 
+## Installing the Crunchy Postgres for Kubernetes Operator
+The Crunchy Postgres for Kubernetes Operator can easily be installed in OpenShift. Just log in as a user with cluster-admin rights and switch to the **Administrator** perspective of the OpenShift console. Then go to the **Operators** menu entry and select **OperatorHub**. In the search field, start typing "crunchy " and select the Crunchy Postgres for Kubernetes Operator when its panel is shown. Make sure it's the **Certified** one and **NOT** Marketplace. Accept all the defaults and click install. 
+
+![Image 4: Crunchy Postgres for Kubernetes][image-4]
+Once the Operator is installed, the Postgres service should be available to the entire cluster.
+
 ## Introduction and Motivation
 As someone with a long history of developing software, I like containers and Kubernetes a lot, because those technologies increase my own productivity. They free me from waiting to get what I need (a remote testing system, for example) from the operations department.
 
@@ -615,3 +621,4 @@ The next chapter is about Helm Charts and Kubernetes Operators for application p
 [image-1]:	developer-catalog-template.png
 [image-2]:	template-instantiation.png
 [image-3]:	topology-view-template.png
+[image-4]:	crunchydata-operator-install.png
