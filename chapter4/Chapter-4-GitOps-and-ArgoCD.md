@@ -183,7 +183,9 @@ As you’ve chosen to do an automatic synchronization, Argo CD will immediately 
 The error arises because the service account of Argo CD does not have the necessary authority to create typical resources in a new Kubernetes namespace. You have to enter the following command for each namespace Argo CD is taking care of:
 
 ```bash
-$ oc policy add-role-to-user admin system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller -n book-dev
+$ oc policy add-role-to-user admin \
+  system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller \
+  -n book-dev
 ```
 
 Alternatively, if you prefer to use a YAML description file for this task, create something like the following:
