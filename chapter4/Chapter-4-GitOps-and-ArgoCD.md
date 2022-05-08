@@ -113,6 +113,7 @@ $ cp -r ../GitOps-Workshop/artifacts/kustomize-ext/ config/
 $ git add config
 $ git commit -am 'initial commit'
 $ git push -u origin main
+Username for 'https://github.com':
 ```
 
 > **Note**: The original `kustomization.yaml` file already contains an image section. This should be removed first.
