@@ -305,7 +305,7 @@ resources:
 To install everything in one go, you simply have to execute the following command:
 
 ```bash
-$ oc apply -k book-example/gitops/argocd
+$ oc apply -k ~/GitOps-Workshop/artifacts/gitops/argocd/
 ```
 
 ## Creating a Tekton Pipeline to Update person—service-config
