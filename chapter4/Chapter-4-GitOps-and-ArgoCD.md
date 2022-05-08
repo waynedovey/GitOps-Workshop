@@ -226,7 +226,7 @@ After you've given the service account the necessary role, you can safely click 
 If you chose automatic sync during configuration, any change to a file in the application's Git repository will cause Argo CD to check what has changed and start the necessary actions to keep the environment in sync.
 
 ## Automated setup
-In order to automatically create everything you need to let Argo CD start synchronizing your config repository with a Kubernetes cluster, you have to create the following files. Please have a look at `book-example/gitops/argocd`.
+In order to automatically create everything you need to let Argo CD start synchronizing your config repository with a Kubernetes cluster, you have to create the following files. Please have a look at `~/GitOps-Workshop/artifacts/gitops/argocd/`.
 
 ### Argo CD application config file
 The Argo CD application config file is named `book-apps.yaml`. This file contains the Application instructions for Argo CD discussed earlier:
