@@ -60,7 +60,7 @@ Just create a new remote Git repository for example on GitHub.com and copy the U
 
 [Create a personal Token using the offical guide][21]
 
-![Image 12: Add Public ssh keys][image-12]
+![Image 13: Github Personal Token][image-13]
 
 Then jump to the shell, create a new empty folder somewhere, and issue the following commands:
 
@@ -790,4 +790,5 @@ This book has taken you through a tour of tools that help with every stage of de
 [image-10]:	gitops-stage-pipeline.png
 [image-11]:	argocd-sync-log.png
 [image-12]:	github-keys.png
+[image-13]:	github-token.png
 
