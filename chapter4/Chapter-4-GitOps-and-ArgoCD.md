@@ -115,12 +115,6 @@ The [OpenShift GitOps Operator can easily be installed in OpenShift][9]. Just lo
 ![Image 2: Installing the OpenShift GitOps Operator][image-2]
 Once the Operator is installed, it creates a new namespace called `openshift-gitops` where an instance of Argo CD is installed and ready to be used.
 
-At time of this writing, Argo CD is not yet configured to use OpenShift authentication, so you have to get the password of the admin user by getting the value of the `openshift-gitops-cluster` secret in the `openshift-gitops` namespace:
-
-```bash
-$ oc get secret openshift-gitops-cluster -n openshift-gitops -ojsonpath='{.data.admin\.password}' | base64 -d
-```
-
 And this is how to get the URL of your Argo CD instance:
 
 ```bash
