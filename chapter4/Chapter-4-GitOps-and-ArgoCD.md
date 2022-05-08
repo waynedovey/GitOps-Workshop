@@ -58,13 +58,7 @@ First of all, let's create a new repository for our application configuration: `
 
 Just create a new remote Git repository for example on GitHub.com and copy the URL (for example, `https://github.com/USERNAME/person-service-config.git`). 
 
-Import Key from Bastion node
-
-```bash
-cat ~/.ssh/id_rsa.pub
-```
-
-Create the new repository on Github and add the Bastion node keys
+[Create a personal Token using the offical guide][21]
 
 ![Image 12: Add Public ssh keys][image-12]
 
@@ -73,9 +67,11 @@ Then jump to the shell, create a new empty folder somewhere, and issue the follo
 ```bash
 $ mkdir person-service-config
 $ cd person-service-config
+$ echo "# person-service-config" >> README.md
 $ git init
+$ git add README.md
 $ git branch -M main
-$ git remote add origin git@github.com:USERNAME/person-service-config.git
+$ git remote add origin https://github.com/waynedovey/person-service-config.git
 ```
 
 One of the main concepts behind GitOps is to represent the configuration and build parameters of your application as a Git repository. This repository could be either part of the source code repository or separate. As I am a big fan of [*separation of concerns*][7], we will create a new repository containing the artifacts that we built in earlier chapters using Kustomize:
@@ -780,6 +776,7 @@ This book has taken you through a tour of tools that help with every stage of de
 [18]:	https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/
 [19]:	https://argo-cd.readthedocs.io/en/stable/user-guide/resource_hooks/
 [20]:	https://www.hashicorp.com/products/vault/secrets-management
+[21]:   https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
 [image-1]:	gitops-delivery-chain.png
 [image-2]:	install-gitops-operator.png
