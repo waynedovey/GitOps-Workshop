@@ -56,18 +56,30 @@ We are going to set up Argo CD (via the [OpenShift GitOps Operator][3]) on OpenS
 ## The Application Configuration Repository
 First of all, let's create a new repository for our application configuration: `person-service-config`.
 
-Just create a new remote Git repository for example on GitHub.com and copy the URL (for example, `https://github.com/wpernath/person-service-config.git`). Then jump to the shell, create a new empty folder somewhere, and issue the following commands:
+Just create a new remote Git repository for example on GitHub.com and copy the URL (for example, `https://github.com/USERNAME/person-service-config.git`). Then jump to the shell, create a new empty folder somewhere, and issue the following commands:
+
+Import Key from Bastion node
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+Create the new repository on Github and add the Bastion node keys
+
+![Image 12: Add Public ssh keys][image-12]
 
 ```bash
 $ mkdir person-service-config
-$ git init -b main
-$ git remote add origin https://github.com/wpernath/person-service-config.git
+$ cd person-service-config
+$ git init
+$ git branch -M main
+$ git remote add origin git@github.com:USERNAME/person-service-config.git
 ```
 
 One of the main concepts behind GitOps is to represent the configuration and build parameters of your application as a Git repository. This repository could be either part of the source code repository or separate. As I am a big fan of [*separation of concerns*][7], we will create a new repository containing the artifacts that we built in earlier chapters using Kustomize:
 
 ```bash
-$ tree
+$ tree ../GitOps-Workshop/artifacts/kustomize-ext/
 └── config
     ├── base
     │   ├── config-map.yaml
@@ -99,7 +111,7 @@ For now, create this configuration repository by copying the files from the `boo
 
 ```bash
 $ mkdir config
-$ cp -r ../book-example/kustomize-ext/ config/
+$ cp -r ../GitOps-Workshop/artifacts/kustomize-ext/ config/
 $ git add config
 $ git commit -am 'initial commit'
 $ git push -u origin main
@@ -778,3 +790,5 @@ This book has taken you through a tour of tools that help with every stage of de
 [image-9]:	tekton-parameter-mapping.png
 [image-10]:	gitops-stage-pipeline.png
 [image-11]:	argocd-sync-log.png
+[image-12]:	github-keys.png
+
