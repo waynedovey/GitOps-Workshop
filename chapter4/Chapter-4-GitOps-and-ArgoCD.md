@@ -767,7 +767,7 @@ This book has taken you through a tour of tools that help with every stage of de
 
 [image-1]:	gitops-delivery-chain.png
 [image-2]:	install-gitops-operator.png
-[image-3]:	argocd-on-openshift.png
+[image-3]:	argocd-new-login-ocp.png
 [image-4]:	argocd-new-app.png
 [image-5]:	argocd-sync-failed.png
 [image-6]:	argocd-sync-success.png
