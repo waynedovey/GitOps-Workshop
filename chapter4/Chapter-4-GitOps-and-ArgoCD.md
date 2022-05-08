@@ -56,7 +56,7 @@ We are going to set up Argo CD (via the [OpenShift GitOps Operator][3]) on OpenS
 ## The Application Configuration Repository
 First of all, let's create a new repository for our application configuration: `person-service-config`.
 
-Just create a new remote Git repository for example on GitHub.com and copy the URL (for example, `https://github.com/USERNAME/person-service-config.git`). Then jump to the shell, create a new empty folder somewhere, and issue the following commands:
+Just create a new remote Git repository for example on GitHub.com and copy the URL (for example, `https://github.com/USERNAME/person-service-config.git`). 
 
 Import Key from Bastion node
 
@@ -67,6 +67,8 @@ cat ~/.ssh/id_rsa.pub
 Create the new repository on Github and add the Bastion node keys
 
 ![Image 12: Add Public ssh keys][image-12]
+
+Then jump to the shell, create a new empty folder somewhere, and issue the following commands:
 
 ```bash
 $ mkdir person-service-config
