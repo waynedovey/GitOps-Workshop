@@ -79,7 +79,7 @@ This chapter is about Tekton and OpenShift Pipelines. The sources can be found i
 
 ```bash
 $ oc new-project book-tekton
-$ pipeline.sh init
+$ ./pipeline.sh init
 configmap/maven-settings configured
 persistentvolumeclaim/maven-repo-pvc configured
 persistentvolumeclaim/builder-pvc configured
@@ -90,7 +90,7 @@ pipeline.tekton.dev/build-and-push-image configured
 
 You can start the pipeline by executing:
 ```bash
-$ pipeline.sh start -u wpernath -p <your-quay-token>
+$ ./pipeline.sh start -u wpernath -p <your-quay-token>
 pipelinerun.tekton.dev/build-and-push-image-run-20211125-163308 created
 ```
 
