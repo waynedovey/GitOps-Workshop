@@ -1,7 +1,7 @@
 #### Bastion Install ####
 
-bash
 ```
+bash
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 sudo mv kustomize /usr/local/bin/
 sudo dnf install docker -y
@@ -21,5 +21,3 @@ sudo wget https://github.com/argoproj/argo-cd/releases/download/v2.3.3/argocd-li
 sudo mv argocd-linux-amd64 /usr/local/bin/argocd
 sudo chmod a+x /usr/local/bin/argocd
 ```
-
-#### Bastion Install ####
