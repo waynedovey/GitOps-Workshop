@@ -301,6 +301,7 @@ resources:
 - ns.yaml
 - roles.yaml
 - book-apps.yaml
+- postgresql.yaml
 ```
 
 To install everything in one go, you simply have to execute the following command:
