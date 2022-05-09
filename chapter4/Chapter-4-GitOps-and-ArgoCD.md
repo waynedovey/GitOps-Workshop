@@ -515,6 +515,10 @@ To create the necessary namespaces and Argo CD Applications, enter the following
 
 ```bash
 $ cd ~/GitOps-Workshop/artifacts/gitops/tekton/
+$ sed -i 's/github.com\/wpernath/github.com\/<GitHubID>/g' ~/GitOps-Workshop/artifacts/gitops/tekton/pipelines/dev-pipeline.yaml
+$ sed -i 's/github.com\/wpernath/github.com\/<GitHubID>/g' ~/GitOps-Workshop/artifacts/gitops/tekton/pipelines/stage-release.yaml
+$ sed -i 's/wpernath/<QuayID>/g' ~/GitOps-Workshop/artifacts/gitops/tekton/pipelines/dev-pipeline.yaml
+$ sed -i 's/wpernath/<QuayID>/g' ~/GitOps-Workshop/artifacts/gitops/tekton/pipelines/stage-release.yaml
 $ ./pipeline.sh init [--force] --git-user <user> \
 	--git-password <pwd> \
 	--registry-user <user> \
