@@ -44,7 +44,7 @@ Example https://quay.io/repository/wdovey/person-service
 ```bash
 $ export username=replaceme
 $ docker login quay.io -u <username> -p <password>
-$ cd artifacts/person-service
+$ cd ~/GitOps-Workshop/artifacts/person-service/
 $ mvn clean package -DskipTests
 $ docker build -f src/main/docker/Dockerfile.jvm -t quay.io/$username/person-service .
 ```
@@ -113,7 +113,7 @@ Then simply execute the following commands to install your application:
 ```bash
 $ oc login <your openshift cluster>
 $ oc new-project book-test
-$ cd ../..
+$ cd ~/GitOps-Workshop/
 $ oc apply -k artifacts/kustomize-ext/overlays/dev
 configmap/dev-app-config-t9m475fk56 created
 service/dev-person-service created
@@ -129,7 +129,7 @@ If you're on any other operating system than Linux, Podman is a little bit compl
 This is unfortunate, because Podman is much more lightweight than Docker. And Podman does not require root access. So if you have some time—or are already developing your applications on Linux—try to set up Podman. If not, continue to use Docker.
 
 #### Working with Skopeo
-[Skopeo][16] is another command line tool that helps you work with container images and different image registries without the heavyweight Docker daemon. 
+[Skopeo][16] is another command line tool that helps you work with container images and different image registries without the heavyweight Docker daemon.
 
 You can use `skopeo` to tag an image in a remote registry:
 
@@ -159,8 +159,8 @@ $ helm create foo
 But I think it's better not to create a chart from a template, but to start from scratch. To do so, enter the following commands to create a basic file system structure for your new Helm chart:
 
 ```bash
-$ cd artifacts/
-$ mv helm-chart helm-chart.bk 
+$ cd ~/GitOps-Workshop/artifacts/
+$ mv helm-chart helm-chart.bk
 $ mkdir helm-chart
 $ mkdir helm-chart/templates
 $ touch helm-chart/Chart.yaml

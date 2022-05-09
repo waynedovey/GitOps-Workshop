@@ -10,7 +10,8 @@ sudo dnf install maven -y
 JAVA_11=$(alternatives --display java | grep 'family java-11-openjdk' | cut -d' ' -f1)
 sudo alternatives --set java $JAVA_11
 
-#export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk" > java.sh
+sudo mv java.sh /etc/profile.d/
 
 curl -LO https://github.com/tektoncd/cli/releases/download/v0.23.1/tkn_0.23.1_Linux_x86_64.tar.gz
 sudo tar xvzf tkn_0.23.1_Linux_x86_64.tar.gz -C /usr/local/bin/ tkn
