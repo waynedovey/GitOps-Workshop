@@ -78,6 +78,7 @@ This chapter is about Helm Charts and Kubernetes Operators. The corresponding fo
 This chapter is about Tekton and OpenShift Pipelines. The sources can be found in the folder `tekton`. Please also have a look at the `pipeline.sh` script. It installs all the necessary Tasks and resources if you call it with the `init` parameter:
 
 ```bash
+$ oc new-project book-tekton
 $ pipeline.sh init
 configmap/maven-settings configured
 persistentvolumeclaim/maven-repo-pvc configured
