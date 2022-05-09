@@ -79,24 +79,22 @@ One of the main concepts behind GitOps is to represent the configuration and bui
 
 ```bash
 $ tree ../GitOps-Workshop/artifacts/kustomize-ext/
-└── config
-    ├── base
-    │   ├── config-map.yaml
-    │   ├── deployment.yaml
-    │   ├── kustomization.yaml
-    │   ├── route.yaml
-    │   └── service.yaml
-    └── overlays
-        ├── dev
-        │   └── kustomization.yaml
-        ├── prod
-        │   └── kustomization.yaml
-        └── stage
-            ├── apply-health-checks.yaml
-            ├── change-env-value.yaml
-            └── kustomization.yaml
+../GitOps-Workshop/artifacts/kustomize-ext/
+├── base
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   ├── postgres.yaml
+│   ├── route.yaml
+│   └── service.yaml
+├── overlays
+│   ├── dev
+│   │   └── kustomization.yaml
+│   └── stage
+│       ├── apply-health-checks.yaml
+│       └── kustomization.yaml
+└── README.md
 
-6 directories, 10 files
+4 directories, 9 files
 ```
 
 Of course, there are several ways to structure your config repositories. Some natural choices include:
