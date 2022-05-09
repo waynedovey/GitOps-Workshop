@@ -9,12 +9,12 @@ items:
       template.openshift.io/expose-username: '{.data[''database-user'']}'
     labels:
       template: postgresql-persistent-template
-    name: summit-db
-    namespace: summit-dev
+    name: wanja
+    namespace: book-dev
   stringData:
-    database-name: summitdb
-    database-password: summit
-    database-user: summit
+    database-name: wanjadb
+    database-password: wanja
+    database-user: wanja
 - apiVersion: v1
   kind: Service
   metadata:
@@ -22,8 +22,8 @@ items:
       template.openshift.io/expose-uri: postgres://{.spec.clusterIP}:{.spec.ports[?(.name=="postgresql")].port}
     labels:
       template: postgresql-persistent-template
-    name: summit-db
-    namespace: summit-dev
+    name: wanjaserver
+    namespace: book-dev
   spec:
     ports:
     - name: postgresql
@@ -32,7 +32,7 @@ items:
       protocol: TCP
       targetPort: 5432
     selector:
-      name: summit-db
+      name: wanja
     sessionAffinity: None
     type: ClusterIP
   status:
@@ -42,8 +42,8 @@ items:
   metadata:
     labels:
       template: postgresql-persistent-template
-    name: summit-db
-    namespace: summit-dev
+    name: wanja
+    namespace: book-dev
   spec:
     accessModes:
     - ReadWriteOnce
@@ -57,18 +57,18 @@ items:
       template.alpha.openshift.io/wait-for-ready: "true"
     labels:
       template: postgresql-persistent-template
-    name: summit-db
-    namespace: summit-dev
+    name: wanja
+    namespace: book-dev
   spec:
     replicas: 1
     selector:
-      name: summit-db
+      name: wanja
     strategy:
       type: Recreate
     template:
       metadata:
         labels:
-          name: summit-db
+          name: wanja
       spec:
         containers:
         - env:
@@ -76,17 +76,17 @@ items:
             valueFrom:
               secretKeyRef:
                 key: database-user
-                name: summit-db
+                name: wanja
           - name: POSTGRESQL_PASSWORD
             valueFrom:
               secretKeyRef:
                 key: database-password
-                name: summit-db
+                name: wanja
           - name: POSTGRESQL_DATABASE
             valueFrom:
               secretKeyRef:
                 key: database-name
-                name: summit-db
+                name: wanjadb
           image: ' '
           imagePullPolicy: IfNotPresent
           livenessProbe:
@@ -115,13 +115,13 @@ items:
           terminationMessagePath: /dev/termination-log
           volumeMounts:
           - mountPath: /var/lib/pgsql/data
-            name: summit-db-data
+            name: wanja-data
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         volumes:
-        - name: summit-db-data
+        - name: wanja-data
           persistentVolumeClaim:
-            claimName: summit-db
+            claimName: wanja
     triggers:
     - imageChangeParams:
         automatic: true
@@ -148,12 +148,12 @@ items:
       template.openshift.io/expose-username: '{.data[''database-user'']}'
     labels:
       template: postgresql-persistent-template
-    name: summit-db
-    namespace: summit-stage
+    name: wanja
+    namespace: book-stage
   stringData:
-    database-name: summitdb
-    database-password: summit
-    database-user: summit
+    database-name: bookdb
+    database-password: wanja
+    database-user: wanja
 - apiVersion: v1
   kind: Service
   metadata:
@@ -161,8 +161,8 @@ items:
       template.openshift.io/expose-uri: postgres://{.spec.clusterIP}:{.spec.ports[?(.name=="postgresql")].port}
     labels:
       template: postgresql-persistent-template
-    name: summit-db
-    namespace: summit-stage
+    name: wanjaserver
+    namespace: book-stage
   spec:
     ports:
     - name: postgresql
@@ -171,7 +171,7 @@ items:
       protocol: TCP
       targetPort: 5432
     selector:
-      name: summit-db
+      name: wanja
     sessionAffinity: None
     type: ClusterIP
   status:
@@ -181,8 +181,8 @@ items:
   metadata:
     labels:
       template: postgresql-persistent-template
-    name: summit-db
-    namespace: summit-stage
+    name: wanja
+    namespace: book-stage
   spec:
     accessModes:
     - ReadWriteOnce
@@ -196,18 +196,18 @@ items:
       template.alpha.openshift.io/wait-for-ready: "true"
     labels:
       template: postgresql-persistent-template
-    name: summit-db
-    namespace: summit-stage
+    name: wanja
+    namespace: book-stage
   spec:
     replicas: 1
     selector:
-      name: summit-db
+      name: wanja
     strategy:
       type: Recreate
     template:
       metadata:
         labels:
-          name: summit-db
+          name: wanja
       spec:
         containers:
         - env:
@@ -215,17 +215,17 @@ items:
             valueFrom:
               secretKeyRef:
                 key: database-user
-                name: summit-db
+                name: wanja
           - name: POSTGRESQL_PASSWORD
             valueFrom:
               secretKeyRef:
                 key: database-password
-                name: summit-db
+                name: wanja
           - name: POSTGRESQL_DATABASE
             valueFrom:
               secretKeyRef:
                 key: database-name
-                name: summit-db
+                name: wanjadb
           image: ' '
           imagePullPolicy: IfNotPresent
           livenessProbe:
@@ -254,13 +254,13 @@ items:
           terminationMessagePath: /dev/termination-log
           volumeMounts:
           - mountPath: /var/lib/pgsql/data
-            name: summit-db-data
+            name: wanja-data
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         volumes:
-        - name: summit-db-data
+        - name: wanja-data
           persistentVolumeClaim:
-            claimName: summit-db
+            claimName: wanja
     triggers:
     - imageChangeParams:
         automatic: true
