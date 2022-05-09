@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: config/overlays/dev
-    repoURL: https://github.com/wpernath/person-service-config.git
+    repoURL: https://github.com/waynedovey/person-service-config.git
     targetRevision: HEAD
   syncPolicy:
     automated:
@@ -34,7 +34,7 @@ spec:
   project: default
   source:
     path: config/overlays/stage
-    repoURL: https://github.com/wpernath/person-service-config.git
+    repoURL: https://github.com/waynedovey/person-service-config.git
     targetRevision: HEAD
   syncPolicy:
     automated:

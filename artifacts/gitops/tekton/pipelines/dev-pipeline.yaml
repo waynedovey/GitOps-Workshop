@@ -4,7 +4,7 @@ metadata:
   name: dev-pipeline
 spec:
   params:
-    - default: 'https://github.com/wpernath/book-example.git'
+    - default: 'https://github.com/waynedovey/book-example.git'
       description: URL of the Git Repo for the source
       name: git-url
       type: string
@@ -16,7 +16,7 @@ spec:
       description: context dir within git repo where the source code is
       name: git-context
       type: string
-    - default: 'https://github.com/wpernath/person-service-config.git'
+    - default: 'https://github.com/waynedovey/person-service-config.git'
       description: URL of the config repository
       name: config-git-url
       type: string
@@ -28,11 +28,11 @@ spec:
       description: real config within config git to use
       name: kustomize-dir
       type: string
-    - default: 'quay.io/wpernath/person-service:latest'
+    - default: 'quay.io/wdovey/person-service:latest'
       description: Image to produce
       name: image-name
       type: string
-    - default: wpernath
+    - default: wdovey
       description: 'username for image repo '
       name: repo-username
       type: string

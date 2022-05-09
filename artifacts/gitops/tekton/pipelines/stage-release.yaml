@@ -7,7 +7,7 @@ spec:
     - name: git-url
       type: string
       description: the url of the config repo to clone
-      default: 'https://github.com/wpernath/person-service-config.git'
+      default: 'https://github.com/waynedovey/person-service-config.git'
     - name: git-revision
       type: string
       description: the revision of the config repo to clone
@@ -15,7 +15,7 @@ spec:
     - name: target-image
       type: string
       description: The target image name of the config (without tag/digest)
-      default: quay.io/wpernath/person-service
+      default: quay.io/wdovey/person-service
 
     - name: kustomize-dev
       type: string
