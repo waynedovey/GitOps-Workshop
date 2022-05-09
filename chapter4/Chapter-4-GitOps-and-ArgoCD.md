@@ -573,7 +573,7 @@ In our case, if a `release-name` is specified, only the `git-branch` task should
 The new `extract-digest` task uses `yq` to extract the digest out of the `kustomization.yaml` file. The command looks like:
 
 ```bash
-$ yq eval '.images[0].digest' $(workspaces.source.path)/$(params.kustomize-dir)/kustomization.yaml
+$ yq eval '.images[1].digest' $(workspaces.source.path)/$(params.kustomize-dir)/kustomization.yaml
 ```
 
 The result of this call is stored in the task's `results` field.
