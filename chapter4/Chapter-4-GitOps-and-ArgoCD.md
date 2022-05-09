@@ -109,6 +109,8 @@ For now, create this configuration repository by copying the files from the `boo
 ```bash
 $ mkdir config
 $ cp -r ../GitOps-Workshop/artifacts/kustomize-ext/* config/
+$ sed -i 's/wpernath/<QuayID>/g' config/overlays/dev/kustomization.yaml
+$ sed -i 's/wpernath/<QuayID>/g' config/overlays/stage/kustomization.yaml
 $ git add config
 $ git commit -am 'initial commit'
 $ git push -u origin main
