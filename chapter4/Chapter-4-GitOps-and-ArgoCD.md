@@ -109,7 +109,7 @@ For now, create this configuration repository by copying the files from the `boo
 
 ```bash
 $ mkdir config
-$ cp -r ../GitOps-Workshop/artifacts/kustomize-ext/ config/
+$ cp -r ../GitOps-Workshop/artifacts/kustomize-ext/* config/
 $ git add config
 $ git commit -am 'initial commit'
 $ git push -u origin main
