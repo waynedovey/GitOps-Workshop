@@ -1,0 +1,44 @@
+#namePrefix: prod-  
+commonLabels:
+  variant: prod
+
+
+# in stage we have 2 replicas
+replicas:
+- count: 4
+  name: person-service
+
+# replace the image tag of the container with stage
+images:
+- digest: sha256:843e5290ac0ebffa9da2636f83b5f0bc0fb75125daf02622582ff9d014bacacf
+  name: quay.io/wpernath/person-service:latest
+  newName: quay.io/wpernath/person-service:v2.0.0-test1
+
+# generate a configmap 
+configMapGenerator:
+- literals:
+  - APP_GREETING=We are in PROD mode
+  name: app-config
+
+# apply some patches
+  # apply health checks to deployment
+
+# This patch provides the name of the namespace into the env-value of the Job
+# This is needed because we want to call the target rest service of person-service
+# which is: person-service.$NAMESPACE.svc:8080
+patches:
+#- path: apply-health-checks.yaml
+#  target:
+#    kind: Deployment
+#    name: person-service
+#    version: v1
+- patch: |-
+    - op: replace
+      path: /spec/template/spec/containers/0/env/0/value
+      value: book-prod
+  target:
+    kind: Job
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base
