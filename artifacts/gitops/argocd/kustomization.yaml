@@ -5,5 +5,5 @@ resources:
 - ns.yaml
 - roles.yaml
 - book-apps.yaml
-
+- postgresql.yaml
 
