@@ -78,7 +78,7 @@ Then have a look at Figure 3 to see what properties need to be set to let Quarku
 3. `quarkus.container-image.builder`: This property selects the method of building the container image. We set the value to `jib` to use [Jib][9].
 4. `quarkus.container-image.image`: Set this to the complete name of the image to be built, including the domain name.
 
-Now check out the [source code][10], have a look at `person-service/src/main/resources/application.properties`, change the image property to meet your needs, and issue:
+Now check out the [source code][10], have a look at `~/GitOps-Workshop/artifacts/person-service/src/main/resources/application.properties`, change the image property to meet your needs, and issue:
 
 ```bash
 $ mvn clean package -DskipTests
