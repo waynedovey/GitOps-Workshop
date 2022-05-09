@@ -305,6 +305,8 @@ resources:
 To install everything in one go, you simply have to execute the following command:
 
 ```bash
+$ echo "REPLACE <username> with github ID"
+$ sed -i 's/wpernath/<username>/g' ~/GitOps-Workshop/artifacts/gitops/argocd/book-apps.yaml
 $ oc apply -k ~/GitOps-Workshop/artifacts/gitops/argocd/
 ```
 
