@@ -558,7 +558,7 @@ These tasks are followed by a manual process where a test specialist accepts the
 You can use the Bash script I created as follows to start the staging pipeline, creating release 1.2.5:
 
 ```bash
-$ ./pipeline.sh stage -r 1.0.0-beta1 -g https://github.com/<username>/person-service-config.git
+$ ./pipeline.sh stage -r 1.0.2-test -g https://github.com/<GitHubID>/person-service-config.git
 ```
 
 ### Setup of the Pipeline
