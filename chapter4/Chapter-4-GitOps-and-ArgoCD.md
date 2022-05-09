@@ -555,10 +555,10 @@ What does a staging pipeline look like? We need a process which does the followi
 
 These tasks are followed by a manual process where a test specialist accepts the pull request and merges the content from the branch back into the main branch. Then Argo CD takes the changes and updates the running staging instance in Kubernetes.
 
-You can use the Bash script I created as follows to start the staging pipeline, creating release 1.2.5:
+You can use the Bash script I created as follows to start the staging pipeline, creating release 1.0.1:
 
 ```bash
-$ ./pipeline.sh stage -r 1.0.2-test -g https://github.com/<GitHubID>/person-service-config.git
+$ ./pipeline.sh stage -r v1.0.1-test -g https://github.com/waynedovey/person-service-config.git
 ```
 
 ### Setup of the Pipeline
