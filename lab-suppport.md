@@ -20,4 +20,9 @@ rm tkn_0.23.1_Linux_x86_64.tar.gz
 sudo wget https://github.com/argoproj/argo-cd/releases/download/v2.3.3/argocd-linux-amd64
 sudo mv argocd-linux-amd64 /usr/local/bin/argocd
 sudo chmod a+x /usr/local/bin/argocd
+
+wget https://get.helm.sh/helm-v3.8.1-linux-amd64.tar.gz
+sudo tar xvzf helm-v3.8.1-linux-amd64.tar.gz
+sudo mv linux-amd64/helm /usr/local/bin/
+sudo rm -fr helm-v3.8.1-linux-amd64.tar.gz linux-amd64
 ```

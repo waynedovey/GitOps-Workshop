@@ -310,6 +310,8 @@ config:
 
 You are just defining your variables in the file. The following YAML configuration file illustrates how to insert the variables, through curly braces:
 
+Create a new file `templates/configmap.yaml`
+
 ```yaml
 apiVersion: v1
 kind: ConfigMap
@@ -361,6 +363,8 @@ Basically, a hook is just another Kubernetes resource (such as a job or a pod), 
 The type of hook gets configured via the `helm.sh/hook` annotation. This annotation allows you to assigns weights to hooks in order to specify the order in which they run. Lower-numbered weights run before higher-number ones, for each type of event.
 
 The following listing defines a new hook as a Kubernetes `Job` with `post-install` and `post-upgrade` triggers:
+
+Create a new file `templates/job.yaml`
 
 ```yaml
 apiVersion: batch/v1
