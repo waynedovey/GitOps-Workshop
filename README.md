@@ -19,11 +19,12 @@ This is a repository with all the sources for the Book "Getting GitOps. A Practi
 
 SSH access to a Linux Machine or an unrestricted MacBook (Brew installed)
 
-Quay.io Account (Red Hat Network Account)
+Quay.io Account (Red Hat Network Account) Create a new Repository ### person-service
+
+GitHub Account
 
 Console and CLI access to an OpenShift Cluster 
 
-GitHub Account 
 
 [1]: chapter1/Chapter-1-Deployment-Basics.md
 [2]: chapter2/Chapter-2-Packaging-with-Helm.md
