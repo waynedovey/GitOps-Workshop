@@ -464,11 +464,11 @@ The next chapter of this book discusses Tekton security, as well as GitOps and A
 [15]:	https://raw.githubusercontent.com/wpernath/book-example/main/tekton/tasks/maven-task.yaml
 [16]:	https://tekton.dev/docs/pipelines/auth/
 
-[image-1]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter3/1-install-pipelines-operator.png
-[image-2]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter3/2-installed-pipelines-operator.png
-[image-3]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter3/3-quarkus-app-props.png
-[image-4]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter3/4-all-cluster-tasks.png
-[image-5]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter3/5-pipeline-builder.png
-[image-6]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter3/6-linking-workspaces.png
-[image-7]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter3/7-pipeline-run.png
-[image-8]:	https://github.com/waynedovey/ocpdev-book/blob/main/chapter3/8-simplified-maven-task.png
+[image-1]:	1-install-pipelines-operator.png
+[image-2]:	2-installed-pipelines-operator.png
+[image-3]:	3-quarkus-app-props.png
+[image-4]:	4-all-cluster-tasks.png
+[image-5]:	5-pipeline-builder.png
+[image-6]:	6-linking-workspaces.png
+[image-7]:	7-pipeline-run.png
+[image-8]:	8-simplified-maven-task.png
