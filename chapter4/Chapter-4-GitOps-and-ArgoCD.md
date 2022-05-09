@@ -310,7 +310,7 @@ $ sed -i 's/wpernath/<username>/g' ~/GitOps-Workshop/artifacts/gitops/argocd/boo
 $ oc apply -k ~/GitOps-Workshop/artifacts/gitops/argocd/
 ```
 
-## Creating a Tekton Pipeline to Update person—service-config
+## Creating a Tekton Pipeline to Update person—service-config (Overview Only)
 We now want to change our pipeline from  the previous chapter (Figure 7) to be more GitOps'y. But what exactly needs to be done?
 ![Image 7: Tekton pipeline from Chapter 4][image-7]
 
