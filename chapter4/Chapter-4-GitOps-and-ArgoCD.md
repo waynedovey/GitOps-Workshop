@@ -78,23 +78,27 @@ $ git remote add origin https://github.com/waynedovey/person-service-config.git
 One of the main concepts behind GitOps is to represent the configuration and build parameters of your application as a Git repository. This repository could be either part of the source code repository or separate. As I am a big fan of [*separation of concerns*][7], we will create a new repository containing the artifacts that we built in earlier chapters using Kustomize:
 
 ```bash
-$ tree ../GitOps-Workshop/artifacts/kustomize-ext/
-../GitOps-Workshop/artifacts/kustomize-ext/
-├── base
-│   ├── deployment.yaml
-│   ├── kustomization.yaml
-│   ├── postgres.yaml
-│   ├── route.yaml
-│   └── service.yaml
-├── overlays
-│   ├── dev
-│   │   └── kustomization.yaml
-│   └── stage
-│       ├── apply-health-checks.yaml
-│       └── kustomization.yaml
-└── README.md
+$ tree ../GitOps-Workshop/artifacts/kustomize-final/
+../GitOps-Workshop/artifacts/kustomize-final/
+└── config
+    ├── base
+    │   ├── deployment.yaml
+    │   ├── kustomization.yaml
+    │   ├── postgres.yaml
+    │   ├── post-sync-hook.yaml
+    │   ├── route.yaml
+    │   └── service.yaml
+    └── overlays
+        ├── dev
+        │   └── kustomization.yaml
+        ├── prod
+        │   ├── apply-health-checks.yaml
+        │   └── kustomization.yaml
+        └── stage
+            ├── apply-health-checks.yaml
+            └── kustomization.yaml
 
-4 directories, 9 files
+6 directories, 11 files
 ```
 
 Of course, there are several ways to structure your config repositories. Some natural choices include:
