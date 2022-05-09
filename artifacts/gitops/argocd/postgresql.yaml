@@ -9,7 +9,7 @@ items:
       template.openshift.io/expose-username: '{.data[''database-user'']}'
     labels:
       template: postgresql-persistent-template
-    name: wanja
+    name: wanjadb
     namespace: book-dev
   stringData:
     database-name: wanjadb
@@ -148,10 +148,10 @@ items:
       template.openshift.io/expose-username: '{.data[''database-user'']}'
     labels:
       template: postgresql-persistent-template
-    name: wanja
+    name: wanjadb
     namespace: book-stage
   stringData:
-    database-name: bookdb
+    database-name: wanjadb
     database-password: wanja
     database-user: wanja
 - apiVersion: v1
