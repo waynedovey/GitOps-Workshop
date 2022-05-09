@@ -86,7 +86,7 @@ items:
             valueFrom:
               secretKeyRef:
                 key: database-name
-                name: wanjadb
+                name: wanja
           image: ' '
           imagePullPolicy: IfNotPresent
           livenessProbe:
@@ -225,7 +225,7 @@ items:
             valueFrom:
               secretKeyRef:
                 key: database-name
-                name: wanjadb
+                name: wanja
           image: ' '
           imagePullPolicy: IfNotPresent
           livenessProbe:
