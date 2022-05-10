@@ -16,6 +16,8 @@ Tekton has numerous objects, but the architecture is quite easy to understand. T
 
 Internally, Tekton creates a TaskRun object for each task it finds in a PipelineRun.
 
+![Image 9: Tekton Arch][image-9]
+
 To summarize: A pipeline contains a list of tasks, each of which contain a list of steps. One of the benefits of Tekton is that tasks and pipelines can be shared with other people, because a pipeline just specifies what to do in a given order. So if most of your projects have a similar pipeline, share and reuse it.
 
 ### Installing OpenShift Pipelines on Red Hat OpenShift
@@ -472,3 +474,4 @@ The next chapter of this book discusses Tekton security, as well as GitOps and A
 [image-6]:	6-linking-workspaces.png
 [image-7]:	7-pipeline-run.png
 [image-8]:	8-simplified-maven-task.png
+[image-9]:	9-tekton-arch.png
